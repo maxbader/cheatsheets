@@ -2,12 +2,16 @@
 
 
 ## Rename images based on exifdate
-# check which exifentry you like to with
-``
+### Check which exif tag/entry/date you like to with
+```
 exiftool -s -G image.jpg
 ```
 Examples:
 ```
-exiftool I*.jpg '-FileName<FileModifyDate'    -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
-exiftool I*.jpg '-FileName<CreateDate'        -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
+exiftool 2*_*.jpg '-FileName<FileModifyDate'    -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
+exiftool 2*_*.jpg '-FileName<CreateDate'        -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
+```
+It works also with movies/videos
+```
+exiftool 2*_*.mp4 "-FileName<CreateDate"       -ext mp4 -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 ```
