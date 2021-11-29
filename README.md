@@ -15,3 +15,9 @@ It works also with movies/videos
 ```
 exiftool 2*_*.mp4 "-FileName<CreateDate"       -ext mp4 -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 ```
+
+### Resize
+resizing images using multiple cores
+```
+find . -name "*.jpg" | parallel -j10  --progress --bar mogrify -quality 90%
+```
