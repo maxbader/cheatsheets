@@ -17,7 +17,7 @@ exiftool 2*_*.mp4 "-FileName<CreateDate"       -ext mp4 -d "%Y-%m-%d--%H-%M-%S-%
 ```
 ### Copy dates
 ```
-exiftool "-CreateDate<FileModifyDate" *
+exiftool -overwrite_original  "-CreateDate<FileModifyDate" *
 ```
 ### Resize
 resizing images using multiple cores
