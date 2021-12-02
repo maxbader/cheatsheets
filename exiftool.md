@@ -2,12 +2,16 @@
 
 
 ## modify images based on exif data
-### Rename based on exif date 
+View exit tags
 ```bash
 exiftool -s -G image.jpg
 ```
+### Rename based on exif date 
 Examples:
 ```bash
+find -name '*.JPG' -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \; 
+find -name '*.JPEG' -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \; 
+rename 's/.jpeg/.jpg/' *
 exiftool 2*_*.jpg '-FileName<CreateDate'        -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 ```
 It works also with movies/videos
