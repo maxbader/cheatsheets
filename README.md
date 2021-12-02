@@ -8,7 +8,6 @@ exiftool -s -G image.jpg
 ```
 Examples:
 ```
-exiftool 2*_*.jpg '-FileName<FileModifyDate'    -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 exiftool 2*_*.jpg '-FileName<CreateDate'        -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 ```
 It works also with movies/videos
@@ -16,6 +15,7 @@ It works also with movies/videos
 exiftool 2*_*.mp4 "-FileName<CreateDate"       -ext mp4 -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 ```
 ### Copy dates
+helpful for WhatsApp images
 ```
 exiftool -overwrite_original  "-CreateDate<FileModifyDate" *
 ```
