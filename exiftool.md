@@ -9,14 +9,13 @@ exiftool -s -G image.jpg
 ### Rename based on exif date 
 Examples:
 ```bash
-find -name '*.JPG' -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \; 
-find -name '*.JPEG' -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \; 
-rename 's/.jpeg/.jpg/' *
-exiftool 2*_*.jpg '-FileName<CreateDate'        -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
+rename 'y/A-Z/a-z/' *     # to lower case
+rename 's/.jpeg/.jpg/' *  # jpeg to jpg
+exiftool *_*.jpg '-FileName<CreateDate'        -ext jpg -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 ```
 It works also with movies/videos
 ```bash
-exiftool 2*_*.mp4 "-FileName<CreateDate"       -ext mp4 -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
+exiftool *_*.mp4 "-FileName<CreateDate"       -ext mp4 -d "%Y-%m-%d--%H-%M-%S-%%-.c-markus.%%e"
 ```
 ### Copy exif dates
 helpful for WhatsApp images
